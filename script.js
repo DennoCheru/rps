@@ -52,6 +52,10 @@ function playRound(humanChoice) {
     computerScoreDisplay.textContent = computerScore;
 
     resultDisplay.textContent = `${resultMessage}`;
+
+    if (humanScore >= 5 || computerScore >= 5) {
+        declareWinner();
+    }
 }
 
 function playGame() {
@@ -63,6 +67,20 @@ function playGame() {
     } else {
         console.log("It's an overall tie!");
     }
+}
+
+function declareWinner() {
+    let finalMessage = '';
+
+    if (humanScore > computerScore) {
+        finalMessage = "Congratulations! You are the overall winner!";
+    } else if (computerScore > humanScore) {
+        finalMessage = "Computer is the overall winner! Better luck next time.";
+    } else {
+        finalMessage = "It's a tie!";
+    }
+
+    resultDisplay.textContent = `Game Over! ${finalMessage}`;
 }
 
 rockButton.addEventListener('click', () => playRound('rock'));
