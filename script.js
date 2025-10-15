@@ -22,54 +22,31 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice) {
-            const computerChoice = getComputerChoice();
+    const computerChoice = getComputerChoice();
 
-            if (humanChoice === computerChoice) {
-                resultMessage = `It's a tie! Both chose ${humanChoice}.`;
-            } else if (
-                (humanChoice === 'rock' && computerChoice === 'scissors') ||
-                (humanChoice === 'paper' && computerChoice === 'rock') ||
-                (humanChoice === 'scissors' && computerChoice === 'paper')
-            ) {
-                humanScore++;
-                resultMessage = `You win this round! ${humanChoice} beats ${computerChoice}.`;
-            } else if (
-                (humanChoice === 'rock' && computerChoice === 'paper') ||
-                (humanChoice === 'paper' && computerChoice === 'scissors') ||
-                (humanChoice === 'scissors' && computerChoice === 'rock')
-            ) {
-                computerScore++;
-                resultMessage = `Computer wins this round! ${computerChoice} beats ${humanChoice}.`;
-            }
-
-            humanScoreDisplay.textContent = humanScore;
-            computerScoreDisplay.textContent = computerScore;
-
-            resultDisplay.textContent = `${resultMessage}`;
+    if (humanChoice === computerChoice) {
+        resultMessage = `It's a tie! Both chose ${humanChoice}.`;
+    } else if (
+        (humanChoice === 'rock' && computerChoice === 'scissors') ||
+        (humanChoice === 'paper' && computerChoice === 'rock') ||
+        (humanChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+        humanScore++;
+        resultMessage = `You win this round! ${humanChoice} beats ${computerChoice}.`;
+    } else if (
+        (humanChoice === 'rock' && computerChoice === 'paper') ||
+        (humanChoice === 'paper' && computerChoice === 'scissors') ||
+        (humanChoice === 'scissors' && computerChoice === 'rock')
+    ) {
+        computerScore++;
+        resultMessage = `Computer wins this round! ${computerChoice} beats ${humanChoice}.`;
     }
 
-function playRound() {
-            const humanChoice = getHumanChoice();
-            const computerChoice = getComputerChoice();
+    humanScoreDisplay.textContent = humanScore;
+    computerScoreDisplay.textContent = computerScore;
 
-            if (humanChoice === computerChoice) {
-                console.log(`It's a tie! Both chose ${humanChoice}.`);
-            } else if (
-                (humanChoice === 'rock' && computerChoice === 'scissors') ||
-                (humanChoice === 'paper' && computerChoice === 'rock') ||
-                (humanChoice === 'scissors' && computerChoice === 'paper')
-            ) {
-                humanScore++;
-                console.log(`You win this round! ${humanChoice} beats ${computerChoice}.`);
-            } else if (
-                (humanChoice === 'rock' && computerChoice === 'paper') ||
-                (humanChoice === 'paper' && computerChoice === 'scissors') ||
-                (humanChoice === 'scissors' && computerChoice === 'rock')
-            ) {
-                computerScore++;
-                console.log(`Computer wins this round! ${computerChoice} beats ${humanChoice}.`);
-            }
-    }
+    resultDisplay.textContent = `${resultMessage}`;
+}
 
 function playGame() {
     console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
