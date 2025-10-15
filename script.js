@@ -81,6 +81,26 @@ function declareWinner() {
     }
 
     resultDisplay.textContent = `Game Over! ${finalMessage}`;
+
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+
+    const restartButton = document.createElement('button');
+    restartButton.textContent = 'Restart Game';
+    restartButton.addEventListener('click', () => {
+        humanScore = 0;
+        computerScore = 0;
+        humanScoreDisplay.textContent = humanScore;
+        computerScoreDisplay.textContent = computerScore;
+        resultDisplay.textContent = 'Make your move!';
+
+        rockButton.disabled = false;
+        paperButton.disabled = false;
+        scissorsButton.disabled = false;
+        restartButton.remove();
+    });
+    document.body.appendChild(restartButton);
 }
 
 rockButton.addEventListener('click', () => playRound('rock'));
