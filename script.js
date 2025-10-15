@@ -6,7 +6,7 @@ const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
 const humanScoreDisplay = document.querySelector('#human-score');
 const computerScoreDisplay = document.querySelector('#computer-score');
-const resultDisplay = document.querySelector('#result');
+const resultDisplay = document.querySelector('#result p');
 
 
 function getComputerChoice() {
@@ -22,6 +22,12 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice) {
+
+    if (humanScore === 5 || computerScore === 5) {
+        return;
+    }
+
+    let resultMessage = '';
     const computerChoice = getComputerChoice();
 
     if (humanChoice === computerChoice) {
