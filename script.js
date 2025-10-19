@@ -40,7 +40,11 @@ function playRound(humanChoice) {
         computerScore++;
         resultDisplay.textContent = `Computer wins this round! ${computerChoice} beats ${humanChoice}.`;
     }
+
+    humanScoreDisplay.textContent = humanScore;
+    computerScoreDisplay.textContent = computerScore;
 }
+
 
 rockBtn.addEventListener('click', () => {
     const humanChoice = 'rock';
