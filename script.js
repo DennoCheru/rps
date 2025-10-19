@@ -45,7 +45,7 @@ function playRound(humanChoice) {
     humanScoreDisplay.textContent = humanScore;
     computerScoreDisplay.textContent = computerScore;
 
-    if (humanScore === 5 || computerChoice === 5) {
+    if (humanScore === 5 || computerScore=== 5) {
         declareWinner();
     }
 }
