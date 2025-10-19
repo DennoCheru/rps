@@ -43,8 +43,23 @@ function playRound(humanChoice) {
 
     humanScoreDisplay.textContent = humanScore;
     computerScoreDisplay.textContent = computerScore;
+
+    if (humanScore === 5 || computerChoice === 5) {
+        declareWinner();
+    }
 }
 
+function declareWinner() {
+    if (humanScore > computerScore) {
+        resultDisplay.textContent = 'Congratulations! You win the game!';
+    } else {
+        resultDisplay.textContent = 'Computer wins the game! Better luck next time!';
+    }
+
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+}
 
 rockBtn.addEventListener('click', () => {
     const humanChoice = 'rock';
